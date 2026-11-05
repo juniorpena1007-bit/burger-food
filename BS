@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d83030">
+  <meta name="description" content="SPECIAL BURGERS. Hamburguesas, papas fritas, combos y bebidas. ¡El sabor que hace historia!">
+  <title>SPECIAL BURGERS | Sabor que hace historia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #D83030;
+      --wine: #3C1518;
+      --green: #323832;
+      --orange: #DE994E;
+      --cream: #F2D7AD;
+      --paper: #fff5e5;
+      --white: #fffaf1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--wine);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .announcement {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: var(--red);
+      color: var(--white);
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 0 rgba(60,21,24,.12);
+    }
+
+    .logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    nav a:hover {
+      color: var(--cream);
+    }
+
+    .hero {
+      background: var(--red);
+      color: var(--white);
+      padding: 75px 7% 85px;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      align-items: center;
+      gap: 50px;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--wine);
+      padding: 9px 15px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+      line-height: .98;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6.5vw, 88px);
+      letter-spacing: -4px;
+    }
+
+    h1 span {
+      color: var(--cream);
+    }
+
+    .hero p {
+      max-width: 440px;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 25px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--wine);
+      padding: 16px 25px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid var(--wine);
+      box-shadow: 5px 5px 0 var(--wine);
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--wine);
+    }
+
+    .hero-photo {
+      position: relative;
+      border: 7px solid var(--cream);
+      box-shadow: 12px 12px 0 var(--wine);
+      transform: rotate(2deg);
+    }
+
+    .hero-photo img {
+      height: 410px;
+    }
+
+    .hero-sticker {
+      position: absolute;
+      bottom: -25px;
+      left: -25px;
+      background: var(--orange);
+      color: var(--wine);
+      padding: 17px;
+      border: 3px solid var(--wine);
+      border-radius: 50%;
+      width: 105px;
+      height: 105px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 13px;
+      transform: rotate(-12deg);
+    }
+
+    .ticker {
+      background: var(--wine);
+      color: var(--cream);
+      padding: 17px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 90px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      margin-top: 13px;
+      color: #765b4a;
+      font-size: 14px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--white);
+      border: 2px solid var(--wine);
+      box-shadow: 6px 6px 0 var(--wine);
+      transition: .2s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .menu-card img {
+      height: 210px;
+      border-bottom: 2px solid var(--wine);
+    }
+
+    .menu-info {
+      padding: 20px;
+    }
+
+    .menu-info h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .menu-info p {
+      color: #765b4a;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .menu-tag {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 7px 10px;
+      background: var(--cream);
+      color: var(--wine);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .special {
+      background: var(--green);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .special img {
+      height: 380px;
+      border: 6px solid var(--cream);
+      box-shadow: 10px 10px 0 var(--orange);
+    }
+
+    .special h2 {
+      font-size: clamp(35px, 5vw, 55px);
+      margin-bottom: 20px;
+    }
+
+    .special p {
+      line-height: 1.8;
+      color: var(--cream);
+      margin-bottom: 25px;
+    }
+
+    .special .eyebrow {
+      background: var(--orange);
+    }
+
+    .restaurant {
+      background: var(--cream);
+    }
+
+    .restaurant-content {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .restaurant-content img {
+      height: 350px;
+      border: 5px solid var(--wine);
+      box-shadow: 9px 9px 0 var(--red);
+    }
+
+    .restaurant-content h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .restaurant-content p {
+      line-height: 1.9;
+      color: #654b3c;
+    }
+
+    .contact {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 85px 7%;
+    }
+
+    .contact h2 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      margin: 0 auto 30px;
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    .contact .btn {
+      margin: 7px;
+    }
+
+    footer {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    footer strong {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 11px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-photo img {
+        height: 270px;
+      }
+
+      .section {
+        padding: 65px 7%;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card img {
+        height: 240px;
+      }
+
+      .special,
+      .restaurant-content {
+        grid-template-columns: 1fr;
+      }
+
+      .special img,
+      .restaurant-content img {
+        height: 270px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    ★ Bienvenidos a SPECIAL BURGERS ★
+  </div>
+
+  <header>
+    <a href="#inicio" class="logo">
+      SPECIAL BURGERS
+      <span>EST. WITH FLAVOR</span>
+    </a>
+
+    <nav>
+      <a href="#inicio">INICIO</a>
+      <a href="#menu">MENÚ</a>
+      <a href="#combos">COMBOS</a>
+      <a href="#restaurante">RESTAURANTE</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="eyebrow">SABOR AUTÉNTICO · ACTITUD RETRO</span>
+        <h1>GOOD FOOD.<br><span>GOOD MOOD.</span></h1>
+        <p>
+          No son solo hamburguesas, son momentos llenos de sabor.
+          Descubre nuestra propuesta y disfruta de una experiencia
+          diferente en cada mordida.
+        </p>
+        <a href="#menu" class="btn">EXPLORAR MENÚ →</a>
+      </div>
+
+      <div class="hero-photo">
+        <img src="imagenes/hamburguesa.jpeg"
+             alt="Hamburguesa especial de SPECIAL BURGERS">
+        <div class="hero-sticker">100%<br>SABOR</div>
+      </div>
+    </section>
+
+    <div class="ticker">
+      BURGERS ★ FRIES ★ COMBOS ★ DRINKS ★ BURGERS ★ FRIES ★
+    </div>
+
+    <section class="section" id="menu">
+      <div class="section-heading">
+        <span class="eyebrow">NUESTRO MENÚ</span>
+        <h2>ELIGE TU FAVORITO</h2>
+        <p>Buenos ingredientes, grandes sabores y mucho estilo.</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="imagenes/hamburguesa.jpeg"
+               alt="Hamburguesa">
+          <div class="menu-info">
+            <h3>BURGERS</h3>
+            <p>Hamburguesas llenas de sabor, con ingredientes que hacen la diferencia.</p>
+            <span class="menu-tag">HECHAS PARA DISFRUTAR</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="imagenes/combos.jpeg"
+               alt="Papas fritas y hamburguesas">
+          <div class="menu-info">
+            <h3>FRIES</h3>
+            <p>Papas fritas doradas y crujientes para acompañar tus favoritos.</p>
+            <span class="menu-tag">CRUNCH TIME</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="imagenes/combos.jpeg"
+               alt="Combo de hamburguesa y papas">
+          <div class="menu-info">
+            <h3>COMBOS</h3>
+            <p>La combinación perfecta para quienes quieren disfrutarlo todo.</p>
+            <span class="menu-tag">TODO EN UNO</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="imagenes/hamburguesa.jpeg"
+               alt="Comida especial">
+          <div class="menu-info">
+            <h3>DRINKS</h3>
+            <p>Bebidas refrescantes para completar tu experiencia.</p>
+            <span class="menu-tag">REFRESH YOURSELF</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section special" id="combos">
+      <div>
+        <span class="eyebrow">THE SPECIAL EXPERIENCE</span>
+        <h2>MORE THAN<br>A BURGER.</h2>
+        <p>
+          En SPECIAL BURGERS creemos que comer rico es parte de
+          los mejores momentos. Ven con tus amigos, comparte
+          y disfruta de una experiencia con mucho sabor.
+        </p>
+        <a href="#contacto" class="btn">QUIERO CONOCER MÁS →</a>
+      </div>
+
+      <div>
+        <img src="imagenes/combos.jpeg"
+             alt="Hamburguesas y papas fritas de SPECIAL BURGERS">
+      </div>
+    </section>
+
+    <section class="section restaurant" id="restaurante">
+      <div class="restaurant-content">
+        <div>
+          <img src="imagenes/restaurante.jpeg"
+               alt="Interior del restaurante SPECIAL BURGERS">
+        </div>
+
+        <div>
+          <span class="eyebrow">NUESTRO ESPACIO</span>
+          <h2>GOOD TIMES<br>HAPPEN HERE.</h2>
+          <p>
+            Un lugar para compartir, disfrutar y crear buenos recuerdos.
+            Queremos que cada visita sea especial, desde el primer
+            momento hasta el último bocado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <span class="eyebrow">LET'S TALK!</span>
+      <h2>¿SE TE ANTOJÓ?</h2>
+      <p>
+        Estamos listos para conocerte. Escríbenos para consultar
+        nuestro menú, disponibilidad y realizar tus pedidos.
+      </p>
+
+      <!-- CAMBIA LOS DATOS DE CONTACTO POR LOS DEL RESTAURANTE -->
+      <a class="btn"
+         href="https://www.instagram.com/TU_USUARIO/"
+         target="_blank" rel="noopener">
+        INSTAGRAM ↗️
+      </a>
+
+      <a class="btn"
+         href="mailto:TU_CORREO@EJEMPLO.COM">
+        CORREO ELECTRÓNICO ✉️
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>SPECIAL BURGERS</strong>
+    <p>GOOD FOOD. GOOD MOOD.</p>
+    <p>© 2026 SPECIAL BURGERS · TODOS LOS DERECHOS RESERVADOS</p>
+  </footer>
+
+</body>
+</html>
