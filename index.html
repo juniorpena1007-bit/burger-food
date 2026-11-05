@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPECIAL BURGERS | Hamburguesas</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --red: #D83030;
-  --wine: #3C1518;
-  --green: #323832;
-  --orange: #DE994E;
-  --cream: #F2D7AD;
+  --rojo: #D83030;
+  --vino: #3C1518;
+  --verde: #323832;
+  --naranja: #DE994E;
+  --crema: #F2D7AD;
 }
 
 * {
@@ -22,16 +22,18 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: var(--cream);
-  color: var(--wine);
-  font-family: 'DM Sans', sans-serif;
+  background: var(--crema);
+  color: var(--vino);
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
-  background: var(--red);
+  background: var(--rojo);
   padding: 22px 8%;
   display: flex;
   justify-content: space-between;
@@ -41,214 +43,230 @@ header {
 }
 
 .logo {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 27px;
-  color: var(--wine);
-}
-
-nav {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
+  font-family: 'Rye', cursive;
+  font-size: 28px;
+  color: var(--vino);
 }
 
 nav a {
-  color: var(--wine);
+  color: var(--vino);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900;
+  margin-left: 20px;
 }
 
-nav a:hover { text-decoration: underline; }
+nav a:hover {
+  color: white;
+}
 
 .hero {
-  background: var(--wine);
-  color: var(--cream);
-  min-height: 570px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background: var(--vino);
+  color: var(--crema);
+  min-height: 530px;
+  padding: 70px 8%;
+  display: flex;
   align-items: center;
-  padding: 65px 8%;
+  justify-content: space-between;
   gap: 35px;
+  flex-wrap: wrap;
 }
 
-.hero small {
-  color: var(--orange);
-  font-weight: bold;
-  letter-spacing: 3px;
+.hero-text {
+  max-width: 520px;
+}
+
+.etiqueta {
+  background: var(--naranja);
+  color: var(--vino);
+  display: inline-block;
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-weight: 900;
+  margin-bottom: 22px;
 }
 
 .hero h1 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(45px, 6vw, 78px);
-  line-height: 1.05;
-  margin: 22px 0;
+  font-family: 'Rye', cursive;
+  font-size: clamp(40px, 6vw, 65px);
+  line-height: 1.15;
+  margin-bottom: 20px;
 }
-
-.hero h1 span { color: var(--orange); }
 
 .hero p {
   font-size: 18px;
   line-height: 1.7;
-  max-width: 470px;
+  margin-bottom: 28px;
 }
 
-.btn {
+.boton {
   display: inline-block;
-  background: var(--red);
+  background: var(--rojo);
   color: white;
-  padding: 15px 27px;
-  margin-top: 27px;
-  border-radius: 5px;
+  padding: 15px 25px;
   text-decoration: none;
-  font-weight: bold;
+  border-radius: 5px;
+  font-weight: 900;
+  transition: .3s;
 }
 
-.btn:hover { background: var(--orange); color: var(--wine); }
+.boton:hover {
+  background: var(--naranja);
+  color: var(--vino);
+  transform: translateY(-3px);
+}
 
 .hero img {
-  width: 100%;
-  height: 370px;
+  width: min(100%, 480px);
+  border: 8px solid var(--naranja);
+  border-radius: 12px;
   object-fit: cover;
-  border: 8px solid var(--orange);
-  border-radius: 8px;
 }
 
-.section {
-  padding: 85px 8%;
+section {
+  padding: 75px 8%;
+}
+
+.titulo {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.section-tag {
-  color: var(--red);
-  font-weight: bold;
-  letter-spacing: 3px;
+.titulo h2 {
+  font-family: 'Rye', cursive;
+  font-size: clamp(30px, 5vw, 43px);
+  margin-bottom: 12px;
 }
 
-.section h2 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(32px, 5vw, 48px);
-  margin: 15px 0 35px;
+.titulo p {
+  font-size: 17px;
 }
 
 .menu {
-  background: var(--cream);
+  background: var(--crema);
 }
 
-.products {
+.productos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
-  text-align: left;
 }
 
-.product {
-  background: #fff5e5;
-  border: 2px solid var(--wine);
-  border-radius: 8px;
+.producto {
+  background: white;
+  border: 3px solid var(--vino);
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform .2s;
+  transition: .3s;
 }
 
-.product:hover { transform: translateY(-7px); }
+.producto:hover {
+  transform: translateY(-7px);
+  box-shadow: 7px 7px 0 var(--naranja);
+}
 
-.product img {
+.producto img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-.product-info { padding: 22px; }
+.producto-contenido {
+  padding: 22px;
+}
 
-.product h3 {
-  font-family: 'Archivo Black', sans-serif;
+.producto h3 {
+  font-family: 'Rye', cursive;
   font-size: 21px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.product p {
-  color: #68514a;
+.producto p {
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 
-.price {
-  display: block;
-  color: var(--red);
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 15px;
+.precio {
+  color: var(--rojo);
+  font-weight: 900;
+  font-size: 18px;
 }
 
-.notice {
-  font-size: 14px;
-  margin-top: 30px;
-}
-
-.combo {
-  background: var(--orange);
-  padding: 80px 8%;
+.categorias {
+  background: var(--verde);
+  color: var(--crema);
   text-align: center;
 }
 
-.combo h2 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 45px;
-  margin-bottom: 18px;
-}
-
-.combo p {
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.restaurant {
-  background: var(--green);
-  color: var(--cream);
-}
-
-.restaurant-grid {
+.categoria-lista {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
-  text-align: left;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
 }
 
-.restaurant img {
-  width: 100%;
+.categoria {
+  background: var(--vino);
+  padding: 30px 15px;
+  border: 2px solid var(--naranja);
   border-radius: 8px;
 }
 
-.restaurant p {
-  font-size: 17px;
+.categoria span {
+  font-size: 42px;
+}
+
+.categoria h3 {
+  font-family: 'Rye', cursive;
+  margin-top: 12px;
+}
+
+.nosotros {
+  background: var(--naranja);
+  text-align: center;
+}
+
+.nosotros p {
+  max-width: 700px;
+  margin: auto;
   line-height: 1.8;
-}
-
-.contact {
-  background: var(--red);
-}
-
-.contact h2 { color: var(--wine); }
-
-.contact p {
   font-size: 18px;
+}
+
+.contacto {
+  background: var(--crema);
+  text-align: center;
+}
+
+.contacto p {
+  margin-bottom: 25px;
   line-height: 1.7;
 }
 
 footer {
-  background: var(--wine);
-  color: var(--cream);
+  background: var(--vino);
+  color: var(--crema);
   text-align: center;
-  padding: 30px;
+  padding: 30px 15px;
 }
 
-@media(max-width: 750px) {
-  header { justify-content: center; }
-  nav { justify-content: center; gap: 15px; }
-  .hero { grid-template-columns: 1fr; }
-  .hero img { height: 260px; }
-  .products { grid-template-columns: 1fr; }
-  .restaurant-grid { grid-template-columns: 1fr; }
-  .combo h2 { font-size: 34px; }
+footer strong {
+  color: var(--naranja);
+}
+
+@media(max-width: 650px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 7px;
+    display: inline-block;
+  }
+
+  .hero {
+    text-align: center;
+    justify-content: center;
+  }
 }
 </style>
 </head>
@@ -256,140 +274,156 @@ footer {
 <body>
 
 <header>
-  <div class="logo">SPECIAL BURGERS.</div>
+  <div class="logo">SPECIAL BURGERS</div>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#menu">Menú</a>
-    <a href="#combos">Combos</a>
-    <a href="#restaurante">Restaurante</a>
+    <a href="#nosotros">Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
 <section class="hero" id="inicio">
-  <div>
-    <small>GOOD FOOD. GOOD TIMES.</small>
-    <h1>BURGERS<br>WITH <span>ATTITUDE.</span></h1>
+
+  <div class="hero-text">
+    <span class="etiqueta">¡BIENVENIDOS!</span>
+
+    <h1>EL SABOR QUE HACE HISTORIA</h1>
+
     <p>
-      No hacemos hamburguesas comunes.
-      Creamos experiencias llenas de sabor,
-      ingredientes increíbles y mucho estilo.
+      Hamburguesas irresistibles, papas crujientes
+      y combinaciones increíbles.
+      ¡Ven y descubre tu nuevo sabor favorito!
     </p>
-    <a href="#menu" class="btn">DESCUBRE EL MENÚ →</a>
+
+    <a href="#menu" class="boton">VER NUESTRO MENÚ →</a>
   </div>
 
-  <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000"
-       alt="Hamburguesa especial">
+  <img src="hamburguesa-triple.jpg"
+       alt="Hamburguesa especial triple con queso">
+
 </section>
 
-<section class="section menu" id="menu">
-  <span class="section-tag">FRESH & DELICIOUS</span>
-  <h2>NUESTRO MENÚ</h2>
+<section class="menu" id="menu">
 
-  <div class="products">
+  <div class="titulo">
+    <h2>NUESTRO MENÚ</h2>
+    <p>Preparado para conquistar tu apetito.</p>
+  </div>
 
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700" alt="Hamburguesa clásica">
-      <div class="product-info">
-        <h3>CLASSIC BURGER</h3>
-        <p>Carne jugosa, queso, vegetales frescos y nuestra salsa especial.</p>
-        <span class="price">PRÓXIMAMENTE</span>
+  <div class="productos">
+
+    <article class="producto">
+      <img src="hamburguesa-triple.jpg"
+           alt="Hamburguesa triple con queso">
+
+      <div class="producto-contenido">
+        <h3>TRIPLE ESPECIAL</h3>
+        <p>
+          Tres carnes jugosas, queso derretido,
+          vegetales frescos y nuestra deliciosa salsa.
+        </p>
+        <div class="precio">Precio próximamente</div>
       </div>
     </article>
 
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=700" alt="Hamburguesa doble">
-      <div class="product-info">
-        <h3>DOUBLE BURGER</h3>
-        <p>Doble carne, doble queso y una combinación irresistible.</p>
-        <span class="price">PRÓXIMAMENTE</span>
+    <article class="producto">
+      <div class="producto-contenido">
+        <h3>HAMBURGUESAS</h3>
+        <p>
+          Diferentes combinaciones, ingredientes
+          deliciosos y mucho sabor.
+        </p>
+        <div class="precio">Precio próximamente</div>
       </div>
     </article>
 
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=700" alt="Papas fritas">
-      <div class="product-info">
-        <h3>CRISPY FRIES</h3>
-        <p>Papas doradas, crujientes y perfectas para acompañar.</p>
-        <span class="price">PRÓXIMAMENTE</span>
+    <article class="producto">
+      <div class="producto-contenido">
+        <h3>PAPAS FRITAS</h3>
+        <p>
+          Doraditas, crujientes y perfectas
+          para acompañar tu hamburguesa.
+        </p>
+        <div class="precio">Precio próximamente</div>
       </div>
     </article>
 
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=700" alt="Combo hamburguesa">
-      <div class="product-info">
-        <h3>THE SPECIAL COMBO</h3>
-        <p>Una hamburguesa deliciosa con papas y bebida.</p>
-        <span class="price">PRÓXIMAMENTE</span>
-      </div>
-    </article>
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=700" alt="Bebida">
-      <div class="product-info">
-        <h3>DRINKS</h3>
-        <p>Bebidas refrescantes para completar tu experiencia.</p>
-        <span class="price">PRÓXIMAMENTE</span>
-      </div>
-    </article>
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=700" alt="Hamburguesa especial">
-      <div class="product-info">
-        <h3>SPECIAL BURGER</h3>
-        <p>Una hamburguesa hecha para quienes aman el verdadero sabor.</p>
-        <span class="price">PRÓXIMAMENTE</span>
+    <article class="producto">
+      <div class="producto-contenido">
+        <h3>COMBOS</h3>
+        <p>
+          Hamburguesa, papas y bebida.
+          ¡Todo lo que necesitas en una sola orden!
+        </p>
+        <div class="precio">Precio próximamente</div>
       </div>
     </article>
 
   </div>
-
-  <p class="notice">*Precios y disponibilidad próximamente.</p>
 </section>
 
-<section class="combo" id="combos">
-  <span class="section-tag">THE PERFECT MATCH</span>
-  <h2>MORE THAN A BURGER.</h2>
-  <p>
-    Hamburguesas, papas y bebidas.
-    Todo lo que necesitas para disfrutar
-    un momento especial.
-  </p>
-  <a href="#contacto" class="btn">QUIERO SABER MÁS →</a>
-</section>
+<section class="categorias">
+  <div class="titulo">
+    <h2>¿QUÉ SE TE ANTOJA?</h2>
+    <p>Tenemos algo para cada gusto.</p>
+  </div>
 
-<section class="section restaurant" id="restaurante">
-  <div class="restaurant-grid">
-    <div>
-      <span class="section-tag">WELCOME TO OUR PLACE</span>
-      <h2>UN LUGAR CON MUCHO SABOR.</h2>
-      <p>
-        Bienvenido a SPECIAL BURGERS.
-        Un espacio pensado para disfrutar buena comida,
-        compartir con amigos y vivir una experiencia
-        diferente.
-      </p>
+  <div class="categoria-lista">
+
+    <div class="categoria">
+      <span>🍔</span>
+      <h3>Hamburguesas</h3>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000"
-         alt="Interior de restaurante">
+    <div class="categoria">
+      <span>🍟</span>
+      <h3>Papas fritas</h3>
+    </div>
+
+    <div class="categoria">
+      <span>🥤</span>
+      <h3>Bebidas</h3>
+    </div>
+
+    <div class="categoria">
+      <span>🔥</span>
+      <h3>Combos</h3>
+    </div>
+
   </div>
 </section>
 
-<section class="section contact" id="contacto">
-  <span class="section-tag">LET'S TALK!</span>
-  <h2>¿SE TE ANTOJÓ?</h2>
+<section class="nosotros" id="nosotros">
+  <div class="titulo">
+    <h2>¿QUIÉNES SOMOS?</h2>
+  </div>
+
   <p>
-    Muy pronto podrás conocer nuestros productos,
-    precios y novedades.
+    En SPECIAL BURGERS creemos que una buena hamburguesa
+    puede convertir cualquier momento en algo especial.
+    Nos encanta ofrecer sabores increíbles, buena comida
+    y experiencias que quieras repetir.
   </p>
-  <a href="#menu" class="btn">VOLVER AL MENÚ ↑</a>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="titulo">
+    <h2>¡HAZ TU PEDIDO!</h2>
+    <p>Estamos listos para preparar algo delicioso.</p>
+  </div>
+
+  <p>
+    Muy pronto encontrarás aquí nuestros canales
+    de contacto para realizar tus pedidos.
+  </p>
 </section>
 
 <footer>
-  <div class="logo" style="color:#F2D7AD">SPECIAL BURGERS.</div>
-  <p>GOOD FOOD. GOOD TIMES.</p>
-  <p>© 2026 SPECIAL BURGERS. Todos los derechos reservados.</p>
+  <p><strong>SPECIAL BURGERS</strong></p>
+  <p>Mucho sabor. Mucha actitud. 🍔</p>
+  <p>© 2026 SPECIAL BURGERS - Todos los derechos reservados.</p>
 </footer>
 
 </body>
